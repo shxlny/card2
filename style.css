@@ -1,0 +1,519 @@
+/* Базовые стили */
+:root {
+  --primary-color: #f8d64e;
+  --secondary-color: #1a1a2e;
+  --accent-color: #d62828;
+  --text-color: #333;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f0f0;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.hero-card {
+  width: 100%;
+  max-width: 900px;
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.hero-header {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--dark-color)
+  );
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.page-header {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-family: "Bangers", cursive;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.hero-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--primary-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  margin: 0 auto 20px;
+  align-self: center;
+}
+
+.hero-title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-title h1 {
+  font-family: "Bangers", cursive;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.hero-company {
+  font-size: 0.9rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 15px 0;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.main-nav a.active {
+  color: var(--primary-color);
+}
+
+.main-nav a:hover {
+  color: var(--primary-color);
+}
+
+.main-nav a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover:after,
+.main-nav a.active:after {
+  width: 100%;
+}
+
+.hero-info,
+.content-section,
+.skills-section,
+.achievements-section,
+.contact-section {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.hero-about h3,
+.hero-abilities h3,
+.hero-contacts h3,
+.timeline-section h2,
+.bio-section h2,
+.skills-section h2,
+.achievements-section h2,
+.contact-methods h2,
+.contact-form h2 {
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-about h3 i {
+  color: var(--primary-color);
+}
+
+.hero-about p {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.hero-details {
+  display: flex;
+  gap: 30px;
+}
+
+.hero-abilities,
+.hero-contacts {
+  flex: 1;
+}
+
+.hero-abilities ul,
+.hero-contacts ul {
+  list-style-type: none;
+}
+
+.hero-abilities li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
+  position: relative;
+  padding-left: 25px;
+}
+
+.hero-abilities li:before {
+  content: "★";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+}
+
+.hero-contacts li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-contacts li i {
+  width: 20px;
+  color: var(--accent-color);
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.timeline-date {
+  width: 100px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.timeline-content {
+  flex: 1;
+  padding-left: 20px;
+  border-left: 2px solid var(--primary-color);
+  position: relative;
+}
+
+.timeline-content:before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  left: -7px;
+  top: 5px;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill-container {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 5px;
+  margin-top: 5px;
+  height: 20px;
+}
+
+.skill-bar {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  position: relative;
+  width: 0;
+}
+
+.skill-bar:after {
+  content: attr(data-level);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 12px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.achievement-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.achievement-card h3 {
+  padding: 15px 15px 5px;
+  color: var(--secondary-color);
+}
+
+.achievement-card p {
+  padding: 0 15px 15px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.contact-methods {
+  margin-bottom: 30px;
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info i {
+  width: 20px;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-button i {
+  font-size: 1.1rem;
+}
+
+.social-button.twitter {
+  background-color: #1da1f2;
+}
+
+.social-button.instagram {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+}
+
+.social-button.facebook {
+  background-color: #1877f2;
+}
+
+.social-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+.map-container {
+  padding: 0 25px 25px;
+}
+
+.map-container img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  font-style: italic;
+  position: relative;
+}
+
+.hero-footer p {
+  margin-bottom: 10px;
+}
+
+.hero-logo {
+  font-family: "Bangers", cursive;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-details {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-section {
+    flex-direction: column;
+  }
+
+  .contact-methods,
+  .contact-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-title h2 {
+    font-size: 1.2rem;
+  }
+
+  .main-nav ul {
+    gap: 10px;
+  }
+
+  .social-links {
+    flex-direction: column;
+  }
+
+  .social-button {
+    justify-content: center;
+  }
+}
